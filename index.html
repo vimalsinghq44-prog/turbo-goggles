@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ErgoChair Pro - Ultimate Comfort Chair</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4a5568;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4299e1;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e2e8f0" width="1200" height="600"/><path fill="%234299e1" d="M0 400Q300 200 600 400T1200 400V600H0z"/><circle fill="%23f7fafc" cx="400" cy="250" r="80"/><circle fill="%23edf2f7" cx="800" cy="220" r="60"/></svg>');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #4299e1;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-button:hover {
+            background: #3182ce;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(66, 153, 225, 0.4);
+        }
+
+        .features {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: #2d3748;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #4299e1, #63b3ed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .chair-showcase {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .showcase-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .chair-image {
+            text-align: center;
+        }
+
+        .chair-visual {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(145deg, #f0f0f0, #cacaca);
+            border-radius: 30px;
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+
+        .chair-visual::before {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 400px;
+            background: radial-gradient(ellipse at center, #e2e8f0 0%, #cbd5e0 50%, #a0aec0 100%);
+            border-radius: 20px 20px 60px 60px;
+            box-shadow: inset 0 -20px 40px rgba(0,0,0,0.1);
+        }
+
+        .chair-visual::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 100px;
+            background: #4a5568;
+            border-radius: 0 0 40px 40px;
+        }
+
+        .pricing {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: 0 auto;
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .price {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #4299e1;
+            margin: 1rem 0;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .showcase-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">ErgoChair Pro</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#showcase">Showcase</a></li>
+                <li><a href="#pricing">Buy Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>The Ultimate Comfort Chair</h1>
+                <p>Engineered for perfect posture, endless comfort, and stylish design. 
+                   Transform your workspace today.</p>
+                <a href="#pricing" class="cta-button">Get Yours Now - $299</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose ErgoChair Pro?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🪑</div>
+                    <h3>Ergonomic Design</h3>
+                    <p>Scientifically designed to support your spine and reduce back pain during long work sessions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💨</div>
+                    <h3>Breathable Mesh</h3>
+                    <p>Premium mesh fabric keeps you cool and comfortable all day long.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Adjustable Everything</h3>
+                    <p>Height, tilt, lumbar support, armrests - customize to your perfect position.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="showcase" class="chair-showcase">
+        <div class="container">
+            <div class="showcase-content">
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Premium Craftsmanship</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem;">Built with aerospace-grade aluminum and memory foam that adapts to your body.</p>
+                    <ul style="list-style: none; font-size: 1.1rem;">
+                        <li>✅ 400lb weight capacity</li>
+                        <li>✅ 12-year warranty</li>
+                        <li>✅ Free shipping worldwide</li>
+                        <li>✅ 100-day trial period</li>
+                    </ul>
+                </div>
+                <div class="chair-image">
+                    <div class="chair-visual"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Ready to Upgrade?</h2>
+            <div class="pricing-card">
+                <h3>ErgoChair Pro</h3>
+                <div class="price">$299</div>
+                <p>One-time payment. Lifetime comfort.</p>
+                <a href="#" class="cta-button" style="margin-top: 2rem; background: #48bb78;">Buy Now</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #718096;">
+                    Free shipping • 100-day money back guarantee
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ErgoChair Pro. Made for comfort, built to last.</p>
+        </div>
+    </footer>
+</body>
+</html>
